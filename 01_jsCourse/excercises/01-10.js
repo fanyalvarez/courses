@@ -57,7 +57,7 @@ export function repitWord(word, repit) {
     // return console.log(newWord);
 
     //usando metodo repeat
-    return console.log(word.repeat(number))
+    return console.log(word.repeat(repit))
 }
 // repitWord('hola 1 ',3)
 
