@@ -32,14 +32,16 @@ export const movie = (data) => {
     genero: data.genero,
     calificaion: data.calificaion
   }
-  console.log(infoMovie)
+  // console.log(infoMovie)
 
+  const generosAcep = ['Action', 'Adult', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Family', 'Fantasy', 'Film Noir', 'Game-Show', 'History', 'Horror', 'Musical', 'Music', 'Mystery', 'News', 'Reality-TV', 'Romance', 'Sci-Fi', 'Short', 'Sport', 'Talk-Show', 'Thriller', 'War', 'Western']
 
   //---1 Todos los datos del objeto son obligatorios.
   const valDatos = () => {
     if (Object.values(infoMovie).includes('')) console.log('Los datos tienen que ser llenados')
   }
   valDatos(infoMovie)
+
 
   //---2 Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 7 restantes números.
   const valId = (id) => {
@@ -63,20 +65,69 @@ export const movie = (data) => {
   }
   // valTitle(infoMovie.titulo)
 
+
   // -4 Valida que el director no rebase los 50 caracteres.
   const valDirect = (director) => {
-    console.log('La validacion los caracteres de director es', director.length < 50)
-
+    const validacion = director.length < 50
+    console.log('La validacion los caracteres de director es', validacion)
   }
   // valDirect(infoMovie.director)
-  
+
+
   // -5 Valida que el año de estreno sea un número entero de 4 dígitos.
+  const valAnio = (anio) => {
+    const validacion = Number.isInteger(anio) && anio.toString().split('').length == 4
+    console.log('La validacion de los caracteres del anio es', validacion)
+  }
+  // valAnio(infoMovie.anio)
+
+
   // -6 Valida que el país o paises sea introducidos en forma de arreglo.
+  const valPais = (pais) => {
+    const validacion = Array.isArray(pais)
+    console.log('La validacion del pais es ', validacion)
+
+  }
+  // valPais(infoMovie.pais)
+
+
   // -7 Valida que los géneros sean introducidos en forma de arreglo.
+  const valGenero = (genero) => {
+    const validacion = Array.isArray(genero)
+    console.log('La validacion del genero es ', validacion)
+
+  }
+  // valGenero(infoMovie.genero)
+
+
   // -8 Valida que los géneros introducidos esten dentro de los géneros aceptados*.
+  const valGeneros = (generos) => {
+    let generCorrect = []
+    generos.forEach(element => {
+      (generosAcep.includes(element))
+        ? generCorrect.push(element)
+        : console.log(`El genero ${element} no esta en la lista`)
+    })
+    if (generCorrect.length === generos.length) console.log(`Los generos son correctos`)
+  }
+  // valGeneros(infoMovie.genero)
+
+
   // -9 Crea un método estático que devuelva los géneros aceptados*.
+
   // -10 Valida que la calificación sea un número entre 0 y 10 pudiendo ser decimal de una posición.
+  const valCalf = (calificaion) => {
+    const validacion = calificaion > 0 && calificaion <= 10
+    console.log(`La validacion de la calificacion es`,validacion)
+  }
+  // valCalf(infoMovie.calificaion)
+
+
   // -11 Crea un método que devuelva toda la ficha técnica de la película.
+  const ficha = (calificaion) => {  
+  }
+  // ficha(infoMovie)
+
   // -12 Apartir de un arreglo con la información de 3 películas genera 3 instancias de la clase de forma automatizada e imprime la ficha técnica de cada película.
 
 

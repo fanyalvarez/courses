@@ -1,8 +1,9 @@
 /* 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".*/
-export const wordInvert = (word) => word === ''
+export const wordInvert = (word) => {
+    word === ''
     ? console.warn('No haz ingresado el texto')
     : console.log(word.split('').reverse().join(''));
-
+}
 // wordInvert('Hola Mundo')
 
 
@@ -11,7 +12,7 @@ export const wordInvert = (word) => word === ''
 export const wordRepit = (text, word) => {
     if (!text) return console.warn('No haz ingresado el texto')
     if (word === '') return console.warn('No haz ingresado la palabra a buscar')
-    // return  console.log(text.match(/mundo/gi).length)
+
     let contador = ""
     text.split(' ').forEach(element => {
         element === word ? contador++ : false;
@@ -32,8 +33,7 @@ export const wordPolindro = (word) => {
         ? console.log(true)
         : console.log(false)
 }
-
-// wordPolindro('A ti no bonita')
+// wordPolindro('A luna ese anula')
 
 /*8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.*/
 
@@ -49,7 +49,7 @@ export const wordsReplace = (text, word) => {
 
 const eliminarCaracter = (text, word) => {
     !text || !word
-        ? console.log("La informacion del texto o la palabra esta vacio")
+        ? console.warn("La informacion del texto o la palabra esta vacio")
         : console.log(text.replace(new RegExp(word, "ig"), ''))
 }
 // eliminarCaracter('xyz1, xyz2, xyz3, xyz4 y xyz5', "xyz")

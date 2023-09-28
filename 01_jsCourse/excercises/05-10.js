@@ -27,7 +27,18 @@ export const numberBD = (number, type) => {
         console.log(`${sum} base ${type}`)
     }
 }
-    // numberBD('10', 'binaria')
+// numberBD('10', 'binaria')
+
+const covertJon = (numero, base) => {
+    if (base == 2) {
+        return console.log(numero, 'binario =', parseInt(numero, 2), 'decimal')
+    } else {
+        return console.log(numero, ' decimal = ', numero.toString(2), 'binario')
+    }
+}
+// covertJon(10, 2)
+
+
 
 /*16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800*/
 export const numberDiscount = (number, discount) => {
@@ -45,7 +56,7 @@ export const numberDiscount = (number, discount) => {
     //     console.log(number - (number * discount / 100))
     // }
 }
-    // numberDiscount(100, 20)
+// numberDiscount(100, 20)
 
 /*17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).*/
 export const dateCalc = (year, month, day) => {
@@ -61,7 +72,7 @@ export const dateCalc = (year, month, day) => {
         return console.log(converYears)
     }
 }
-    // dateCalc(1991, 11, 1)
+// dateCalc(1991, 11, 1)
 // if (year.toString().split('').length != 4) console.log(`coloque el anio con 4 digitos`)
 // if (!(month > 0 && month <= 12)) console.log('Coloque el mes con digito entre el 1 y 12')
 // if (!(day > 0 && day <= 31)) console.log('Coloque el dia con digito entre el 1 y 31')

@@ -21,15 +21,22 @@ export const numberCapicua = (number) => {
 
 export const numbFact = (number) => {
     let fact = 1
+    let contador = 1
     if (Math.sign(number) === -1 || number == 0 || isNaN(number)) {
         console.warn('El dato tiene que ser un numero y no puede ser 0 o negativo')
     } else {
+        //esta es otra forma cde menor a mayor 
+        // while ((number + 1) != contador) {
+        //     fact = contador * fact
+        //     contador++
+        // }
+
         do {
             fact = fact * number
             number--
-        } while (number > 0);
+        } while (number > 1);
         console.log(`El factorial es ${fact} `)
     }
 }
-// numbFact('4')
+// numbFact(5)
 

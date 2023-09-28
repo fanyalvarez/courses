@@ -43,7 +43,7 @@ export function repitWord(word, repit) {
 
     if (repit === 0) return console.error("EL numero de veces no puede ser 0");
     if (Math.sign(repit) === -1) return console.error("EL numero de veces no puede negativo");
-
+    if (!repit || !word) return console.log('No haz ingresado los datos solicitados')
     // let contador = 1
     // let newWord = word
     // if (word == "") {
@@ -59,7 +59,7 @@ export function repitWord(word, repit) {
     //usando metodo repeat
     return console.log(word.repeat(repit))
 }
-// repitWord('hola 1 ',3)
+// repitWord('hola!  ',3 )
 
 
 
