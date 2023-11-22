@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { tasks as data } from "./taks";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 
 function App() {
-
-  const [title, setTitle] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(title);
-  };
-
+  const [tasks, setTasks] = useState(data);
+  function createTask(taskTitle) {
+    // setTasks([...tasks, task]);   cambia al sig: porq no agrega un objeto sino solo un string
+    setTasks([...tasks, {
+      id: tasks.length,
+      title: taskTitle,
+      description: "nueva tarea",
+    }]);
+  }
   return (
     <>
-      <TaskForm />
-      <TaskList />
+      <TaskForm createTask={createTask} />
+      <TaskList tasks={tasks} />
     </>
   );
 }
